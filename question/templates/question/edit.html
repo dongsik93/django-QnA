@@ -1,0 +1,12 @@
+{% extends "question/base.html" %}
+
+{% block body %}
+
+    <form action="/questions/{{question.id}}/update/" method="post">
+        {% csrf_token %}
+        <input type="text" name="title" value="{{question.title}}"/>
+        <input type="text" name="content" value="{{question.content}}"/>
+        <input type="submit" value="Submit"/>
+    </form>
+
+{% endblock %}

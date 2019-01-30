@@ -1,0 +1,14 @@
+{% extends 'question/base.html' %}
+
+{% block body %}
+
+    <h1>Index</h1>
+    
+    {% for question in questions %}
+    
+        <h3>{{question.title}}</h3>
+        <h4>{{question.created_at}}</h4>
+        <a href="/questions/{{question.id}}/">Read</a>
+    {% endfor %}
+    
+{% endblock %}
